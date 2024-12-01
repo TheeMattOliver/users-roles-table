@@ -1,6 +1,6 @@
 # User roles table
 
-<video src="https://github.com/user-attachments/assets/654e0e56-885f-47c0-a6b3-9a1dd767acb7" width="450">
+<video src="https://github.com/user-attachments/assets/654e0e56-885f-47c0-a6b3-9a1dd767acb7" width="450"></video>
 
 Core technologies:
 
