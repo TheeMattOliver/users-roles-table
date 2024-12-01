@@ -1,2 +1,2 @@
 export {default} from './UsersTable'
-export type {UsersStaticTableProps} from './types'
+export type {User, UserWithAction, UsersTableProps} from './types'

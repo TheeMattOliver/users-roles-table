@@ -11,6 +11,6 @@ export interface RoleResponse {
   data: Role[]
 }
 
-export interface RolesStaticTableProps {
+export interface RolesTableProps {
   initialData?: RoleResponse
 }

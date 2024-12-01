@@ -13,7 +13,7 @@ export interface UserResponse {
   data: User[]
 }
 
-export interface UsersStaticTableProps {
+export interface UsersTableProps {
   initialData?: UserResponse
 }
 export interface UserWithAction extends User {
