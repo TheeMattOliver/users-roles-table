@@ -1,0 +1,65 @@
+.DropdownMenuContent {
+  position: relative;
+  z-index: 50;
+  min-width: 140px;
+  overflow: hidden;
+  border-radius: var(--radius-3);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--color-panel-solid); /* @TODO: use correct token*/
+  color: var(--text);
+  padding: var(--space-1);
+  box-shadow: var(--shadow-4);
+}
+
+.DropdownMenuItem {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  gap: var(--space-2);
+  align-items: center;
+  border-radius: var(--radius-1);
+  padding: 6px var(--space-3); /* @TODO, not pixel perfect visual alignment with design */
+  font-size: var(--font-size);
+
+  outline: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.DropdownMenuItem:hover {
+  background-color: var(--background-neutral-subtle-hovered);
+  color: var(--text-accent-foreground);
+}
+.DropdownMenuItem:focus {
+  background-color: var(--background-neutral-subtle-hovered);
+  color: var(--text-accent-foreground);
+}
+
+.DropdownMenuItem:disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.DropdownMenuLabel {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+
+.DropdownMenuSeparator {
+  margin: var(--space-1) 0;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+.DropdownMenuTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}

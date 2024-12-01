@@ -1,0 +1,152 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes zoom-in {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes zoom-out {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+}
+
+.Overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background-color: var(--color-overlay, #00000066);
+  animation: fade-in 0.2s ease-in-out;
+  will-change: opacity;
+}
+.Overlay[data-state='closed'] {
+  animation: fade-out 0.2s ease-in-out;
+}
+.ScrollPadding {
+  margin-top: auto;
+  flex-grow: 1;
+  margin: auto;
+  padding: var(--space-6) var(--space-4) max(var(--space-6), 6vh);
+}
+.Content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 70;
+  display: grid;
+  gap: var(--space-3);
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--background-neutral);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-6);
+  padding: var(--space-5);
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-5);
+  animation:
+    zoom-in 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    slide-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+.Content[data-state='closed'] {
+  animation:
+    zoom-out 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    slide-out 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.CloseButton {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0.7;
+}
+.CloseButton:hover {
+  opacity: 1;
+}
+.CloseButton:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+.CloseButton > svg {
+  height: var(--space-5);
+  width: var(--space-5);
+}
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .Header {
+    text-align: left;
+  }
+}
+.Title {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-4);
+  letter-spacing: var(--letter-spacing-2);
+}
+
+.Description {
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-3);
+  color: var(--text);
+}
+
+.Footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}

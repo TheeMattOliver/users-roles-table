@@ -1,0 +1,9 @@
+.Label {
+  font-size: var(--font-size, 1rem);
+  font-weight: 500;
+  line-height: 1;
+}
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

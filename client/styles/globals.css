@@ -1,0 +1,274 @@
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/gray.css';
+@import '@radix-ui/colors/red.css';
+@import '@radix-ui/colors/red-alpha.css';
+@import '@radix-ui/colors/violet.css';
+@import '@radix-ui/colors/purple.css';
+@import '@radix-ui/colors/purple-alpha.css';
+@import '@radix-ui/colors/blue.css';
+@import '@radix-ui/colors/slate-alpha.css';
+@import '@radix-ui/colors/gray-alpha.css';
+@import '@radix-ui/colors/iris.css';
+:root {
+  /* base font-size */
+  --base-font-size: 14px;
+  --scaling: 1;
+  --radius-factor: 1;
+  --radius-full: 0px;
+  --radius-thumb: 9999px;
+  /* spacing */
+  --space-1: calc(4px * var(--scaling));
+  --space-2: calc(8px * var(--scaling));
+  --space-3: calc(12px * var(--scaling));
+  --space-4: calc(16px * var(--scaling));
+  --space-5: calc(24px * var(--scaling));
+  --space-6: calc(32px * var(--scaling));
+  --space-7: calc(40px * var(--scaling));
+  --space-8: calc(48px * var(--scaling));
+  --space-9: calc(64px * var(--scaling));
+  /* radius */
+  --radius-1: calc(3px * var(--scaling) * var(--radius-factor));
+  --radius-2: calc(4px * var(--scaling) * var(--radius-factor));
+  --radius-3: calc(6px * var(--scaling) * var(--radius-factor));
+  --radius-4: calc(8px * var(--scaling) * var(--radius-factor));
+  --radius-5: calc(12px * var(--scaling) * var(--radius-factor));
+  --radius-6: calc(16px * var(--scaling) * var(--radius-factor));
+  /* color */
+  --workos-purple: #6565ec;
+  --text: var(--gray-12, #2b333b);
+  --text-subtle: var(--gray-a11, rgba(0, 7, 19, 0.62));
+  --text-inverse: #ffffff;
+  --border: var(--gray-3);
+  --border-indicator: var(--purple-9, #6565ec);
+  --border-focus: var(--blue-7);
+  --border-table: var(--gray-6);
+  --background-neutral-subtle: var(--gray-0);
+  --background-neutral-subtle-hovered: var(--gray-4);
+  --background-neutral: var(--gray-1);
+  --accent-indicator: var(--purple-9, #6565ec);
+  --accent-contrast: #ffffff;
+  --color-background: #fff;
+  --color-panel-translucent: hsla(0, 0%, 100%, 0.8);
+  --color-panel-solid: hsla(0, 0%, 100%, 1);
+  --color-overlay: var(--black-a6);
+  --color-surface: hsla(0, 0%, 100%, 0.8);
+  /* typography */
+  --font-weight-medium: 700;
+
+  --font-size-1: calc(12px * var(--scaling));
+  --font-size-2: calc(14px * var(--scaling));
+  --font-size-3: calc(16px * var(--scaling));
+  --font-size-4: calc(18px * var(--scaling));
+  --font-size-5: calc(20px * var(--scaling));
+  --font-size-6: calc(24px * var(--scaling));
+  --font-size-7: calc(28px * var(--scaling));
+  --font-size-8: calc(35px * var(--scaling));
+  --font-size-9: calc(60px * var(--scaling));
+
+  --line-height-1: calc(16px * var(--scaling));
+  --line-height-2: calc(20px * var(--scaling));
+  --line-height-3: calc(24px * var(--scaling));
+  --line-height-4: calc(26px * var(--scaling));
+  --line-height-5: calc(28px * var(--scaling));
+  --line-height-6: calc(30px * var(--scaling));
+  --line-height-7: calc(36px * var(--scaling));
+  --line-height-8: calc(40px * var(--scaling));
+  --line-height-9: calc(60px * var(--scaling));
+
+  --letter-spacing-1: 0.005em;
+  --letter-spacing-2: 0em;
+  --letter-spacing-3: 0em;
+  --letter-spacing-4: -0.005em;
+  --letter-spacing-5: -0.01em;
+  --letter-spacing-6: -0.0125em;
+  --letter-spacing-7: -0.015em;
+  --letter-spacing-8: -0.02em;
+  --letter-spacing-9: -0.05em;
+
+  font-size: var(--base-font-size);
+  /* shadows */
+  -shadow-1:
+    inset 0 0 0 1px var(--gray-a5),
+    inset 0 1.5px 2px 0 var(--gray-a2),
+    inset 0 1.5px 2px 0 var(--black-a2);
+  --shadow-2: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%), 0 0 0 0.5px var(--black-a1),
+    0 1px 1px 0 var(--gray-a2), 0 2px 1px -1px var(--black-a1), 0 1px 3px 0 var(--black-a1);
+  --shadow-3: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%), 0 2px 3px -2px var(--gray-a3),
+    0 3px 12px -4px var(--black-a2), 0 4px 16px -8px var(--black-a2);
+  --shadow-4: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%), 0 8px 40px var(--black-a1),
+    0 12px 32px -16px var(--gray-a3);
+  --shadow-5: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%), 0 12px 60px var(--black-a3),
+    0 12px 32px -16px var(--gray-a5);
+  --shadow-6: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%), 0 12px 60px var(--black-a3),
+    0 16px 64px var(--gray-a2), 0 16px 36px -20px var(--gray-a7);
+  --base-card-surface-box-shadow: 0 0 0 1px color-mix(in oklab, var(--gray-a5), var(--gray-5) 25%);
+  --base-card-surface-hover-box-shadow: 0 0 0 1px color-mix(in oklab, var(--gray-a7), var(--gray-7) 25%);
+  --base-card-surface-active-box-shadow: 0 0 0 1px color-mix(in oklab, var(--gray-a6), var(--gray-6) 25%);
+  --base-card-classic-border-color: color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%);
+  --base-card-classic-hover-border-color: color-mix(in oklab, var(--gray-a4), var(--gray-4) 25%);
+  --base-card-classic-active-border-color: color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* color tokens */
+  }
+}
+html,
+body,
+#__next {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+}
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    avenir next,
+    avenir,
+    segoe ui,
+    helvetica neue,
+    helvetica,
+    Cantarell,
+    Ubuntu,
+    roboto,
+    noto,
+    arial,
+    sans-serif;
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#__next {
+  isolation: isolate;
+}
+/*
+  9. Remove default list styles
+*/
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Scrollbar styles */
+html {
+  --color-thumb: rgb(var(--scale-charcoal-700));
+  --color-track: rgb(var(--scale-neutral-100));
+  --scrollbar-width: thin;
+  /* Official styles (Firefox) */
+  scrollbar-color: var(--color-thumb) var(--color-track);
+  scrollbar-width: var(--scroll-bar-width);
+}
+
+/* Vendor prefix for scrollbars on other browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--color-track);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 1000px;
+  background-color: var(--color-thumb);
+  border: 2px solid var(--color-track);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-input-hovered);
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --color-thumb: rgb(var(--scale-charcoal-200));
+    --color-track: rgb(var(--scale-charcoal-900));
+  }
+}
+/* Fonts */
+html,
+body {
+  --font-system-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica,
+    Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-untitled-sans: 'Test Untitled Sans Black', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+/* button */
+button {
+  border: none;
+}
+
+/* Style the selection */
+::selection {
+  background-color: #003eff3e;
+}
+
+// @TODO
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background-color: #003eff3e;
+  }
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

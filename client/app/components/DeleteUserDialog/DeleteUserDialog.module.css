@@ -1,0 +1,20 @@
+.ScrollPadding {
+  margin-top: auto;
+  flex-grow: 1;
+  margin: auto;
+}
+.DangerButton {
+  border-color: #ce002553;
+  background-color: var(--ruby-surface, #fff5f6cc) !important;
+}
+.DangerButton:hover {
+  border-color: #c300286d !important;
+  background-color: var(--ruby-surface, #fff5f6cc) !important;
+}
+.DangerButton:active {
+  border-color: #c300286d;
+  background-color: var(--red-a3) !important;
+}
+.DeletedUser {
+  font-weight: var(--font-weight-medium);
+}

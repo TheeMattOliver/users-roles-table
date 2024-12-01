@@ -1,0 +1,62 @@
+.InputWrapper {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-1);
+  gap: var(--space-4);
+}
+.Input {
+  --text-field-border-width: 1px;
+  --text-field-border-radius: max(var(--radius-2), var(--radius-full));
+  --text-field-height: var(--space-6);
+  --text-field-padding: calc(var(--space-2) - var(--text-field-border-width));
+  --text-field-border-radius: max(var(--radius-2), var(--radius-full));
+  --text-field-native-icon-size: var(--space-4);
+
+  --text-field-selection-color: var(--purple-a5);
+  --text-field-focus-color: var(--purple-8);
+
+  font-size: var(--font-size-2);
+  letter-spacing: var(--letter-spacing-2);
+
+  width: 100%;
+  padding: var(--text-field-padding);
+  height: var(--text-field-height);
+  display: flex;
+  align-items: center;
+  text-align: inherit;
+  border-radius: calc(var(--text-field-border-radius) - var(--text-field-border-width));
+  text-indent: var(--text-field-padding);
+
+  background-clip: content-box;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-1);
+  color: var(--gray-12);
+
+  border-width: var(--text-field-border-width);
+  border-style: solid;
+  border-color: var(--border);
+}
+.Input:focus-visible {
+  outline: 2px solid var(--violet-8);
+}
+.Wrapper {
+  position: relative;
+}
+.PaginationControlsWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  justify-content: flex-end;
+  gap: var(--space-1);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  flex: 1;
+  min-height: 44px;
+}
+.PaginationControls {
+  position: absolute;
+  display: flex;
+  gap: var(--space-3);
+  right: var(--space-3);
+  bottom: var(--space-2);
+}

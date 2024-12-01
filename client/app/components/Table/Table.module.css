@@ -1,0 +1,74 @@
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  caption-side: bottom;
+  font-size: 1rem;
+  table-layout: auto;
+}
+
+.TableContainer {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  border-radius: var(--radius-4, 8px);
+  border: 1px solid var(--border);
+}
+
+.TableCaption {
+  margin-top: var(--space-3);
+  color: var(--text-subtle);
+  font-size: 1rem;
+}
+
+.TableHeaderRow {
+  border-bottom: 1px solid var(--border);
+}
+
+.TableHeader {
+  height: var(--space-7);
+  padding: 0 var(--space-3);
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 500;
+  background-color: var(--background-neutral);
+  color: var(--text);
+}
+
+.TableBodyRow:last-child {
+  border-bottom: 0;
+}
+
+.TableRow {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+/* @TODO: maybe later */
+/* .TableRow:hover {
+  background-color: var(--background-neutral-subtle-hovered);
+}
+
+.TableRowSelected {
+  background-color: var(--bg-muted-selected);
+} */
+
+.TableCell {
+  padding: var(--space-3);
+  vertical-align: middle;
+}
+
+.TableFooter {
+  border-top: 1px solid var(--border-table);
+  background-color: var(--background-neutral-subtle);
+  font-weight: 500;
+  width: 100%;
+}
+
+.TableFooterRow:last-child {
+  border-bottom: 0;
+}
+.TableCellInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}

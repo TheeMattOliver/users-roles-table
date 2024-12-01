@@ -1,0 +1,94 @@
+@keyframes slide-in {
+  from {
+    box-shadow:
+      inset 0 -1px 0 0 transparent,
+      0 1px 0 0 transparent;
+  }
+  to {
+    box-shadow:
+      inset 0 -1px 0 0 var(--border-indicator),
+      0 1px 0 0 var(--border-indicator);
+  }
+}
+.TabsRoot {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--text);
+}
+
+.TabsList {
+  flex-shrink: 0;
+  display: flex;
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  font-style: normal;
+  scrollbar-width: none;
+
+  height: 40px;
+}
+.TabsContent {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: white;
+  outline: none;
+}
+
+.TabsTrigger {
+  font-family: inherit;
+  background-color: white;
+  padding: 0px var(--space-2, 8px);
+
+  max-width: 72px;
+  flex-shrink: 0;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-subtle);
+
+  user-select: none;
+}
+.TabsTrigger:hover {
+}
+.TabsTrigger:first-child {
+}
+.TabsTrigger:last-child {
+}
+.TabsTrigger:hover {
+  color: var(--text-hovered);
+}
+.TabsTrigger[data-state='active'] {
+  color: var(--text);
+  font-weight: 500;
+  box-shadow:
+    inset 0 -2px 0 0 var(--border-indicator),
+    0 1px 0 0 var(--border-indicator);
+}
+.TabsTrigger:focus-visible {
+  outline: none;
+}
+
+.TabsTriggerInner {
+  --tab-inner-padding-y: var(--space-1);
+  --tab-inner-padding-x: var(--space-2);
+  --tab-inner-border-radius: var(--radius-2);
+  padding: var(--tab-inner-padding-y) var(--tab-inner-padding-x);
+  border-radius: var(--tab-inner-border-radius);
+}
+.TabsTriggerInner:hover {
+  color: var(--text-hovered);
+  background-color: var(--background-neutral-subtle-hovered);
+}
+.TabsTrigger:focus-visible .TabsTriggerInner {
+  box-shadow: 0 0 0 2px var(--border-focus);
+}

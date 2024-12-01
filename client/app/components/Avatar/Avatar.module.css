@@ -1,0 +1,43 @@
+.Avatar {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.AvatarImage {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: 100%;
+}
+
+.AvatarFallback {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--purple-4);
+}
+.xs {
+  height: var(--space-5);
+  width: var(--space-5);
+}
+.sm {
+  height: var(--space-6);
+  width: var(--space-6);
+}
+.md {
+  height: var(--space-8);
+  width: var(--space-8);
+}
+.lg {
+  height: var(--space-9);
+  width: var(--space-9);
+}
+.xl {
+  height: var(--space-9);
+  width: var(--space-9);
+}

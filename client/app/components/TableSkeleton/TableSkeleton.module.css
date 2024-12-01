@@ -1,0 +1,76 @@
+@keyframes shimmer {
+  0% {
+    background-position-x: 50%;
+    color: var(--gray-a8);
+  }
+  25% {
+    background-position-x: 50%;
+  }
+  75% {
+    background-position-x: 0%;
+    color: var(--gray-a5);
+  }
+  100% {
+    background-position-x: -150%;
+    color: var(--gray-a8);
+  }
+}
+
+.SkeletonWrapper {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  border-radius: var(--radius-4, 8px);
+  border: 1px solid var(--border);
+  min-width: 850px;
+  padding: 16px;
+}
+
+.SkeletonHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 58px;
+  align-items: center;
+  gap: 8px;
+}
+
+.SkeletonHeaderCell {
+  height: 16px;
+  width: 40px;
+  background: var(--gray-a4);
+  border-radius: var(--radius-2);
+  animation: shimmer 1.5s infinite ease-in-out;
+}
+
+.SkeletonRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 58px;
+  align-items: center;
+  gap: 8px;
+}
+
+.SkeletonUserCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.SkeletonAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gray-a4);
+}
+
+.SkeletonText {
+  background: var(--gray-a4);
+  border-radius: var(--radius-2);
+}
+.Skeleton {
+  color: var(--gray-a8);
+  background-size: 200% auto;
+  background-position-x: 50%;
+  background-image: linear-gradient(to right, transparent, var(--gray-a3));
+  animation: shimmer 2s ease-in 0.25s infinite;
+}
