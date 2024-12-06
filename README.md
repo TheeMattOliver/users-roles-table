@@ -85,11 +85,11 @@ npm run dev
 
 ## Next steps
 
-With more time I would have
+With more time I would like to
 
-- better keyboard navigability/focus management
-- implemented the "Add User/Role" feature
-- implemented "Edit User" feature
+- improve better keyboard navigability/focus management between dialog and dropdown
+- implement the "Add User/Role" feature
+- implement "Edit User" feature
 - better error handling for server errors
 - better "interstitial" loading states, e.g., change a role and see a transient loader while new role is being populated
 - more visual design and better UX for skeleton loader on the table

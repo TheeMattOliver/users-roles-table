@@ -171,7 +171,7 @@ export default function UsersDataTable({initialData}: UsersDataTableProps) {
                       </DropdownMenuTrigger>
 
                       <DropdownMenuContent sideOffset={5} align={'end'}>
-                        <DropdownMenuItem>Edit user</DropdownMenuItem>
+                        <DropdownMenuItem disabled>Edit user</DropdownMenuItem>
                         <DropdownMenuItem asChild onSelect={() => setTimeout(() => handleOpenDialog())}>
                           <span className={dropdownMenuClassNames.DropdownMenuItem}>Delete user</span>
                         </DropdownMenuItem>
