@@ -4,13 +4,13 @@
 
 ## Getting started
 
-To run the project, clone it locally:
+To run the project, clone it locally. Then follow the steps below.
 
 ### Set up local env
 
-Rename `.env.EXAMPLE` to `env.local`
+Rename the `.env` example file in the `client` directory from `.env.EXAMPLE` to `env.local`.
 
-### Install and run
+### Install dependencies and run the project
 
 ```bash
 
