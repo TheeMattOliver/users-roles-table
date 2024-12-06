@@ -6,7 +6,11 @@
 
 To run the project, clone it locally:
 
+### Set up local env
+
 Rename `.env.EXAMPLE` to `env.local`
+
+### Install and run
 
 ```bash
 
@@ -24,7 +28,7 @@ cd client && npm run storybook
 
 ```
 
-## Structure
+## Project structure
 
 ```bash
 .
@@ -84,7 +88,7 @@ cd client && npm run storybook
 
 With more time I would like to
 
-- improve better keyboard navigability/focus management between dialog and dropdown
+- improve keyboard navigability/focus management between dialog and dropdown
 - implement the "Add User/Role" feature
 - implement "Edit User" feature
 - craft better error handling for server errors

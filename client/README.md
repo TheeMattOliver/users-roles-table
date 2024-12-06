@@ -2,30 +2,33 @@
 
 <video src="https://github.com/user-attachments/assets/6003abb1-c26c-43d0-a0f1-8d5c452402b3" width="450"></video>
 
-Core technologies:
-
-- tanstack/react-query
-- tanstack/react-table
-- CSS modules
-
 ## Getting started
 
-Run the project:
+To run the project, clone it locally:
+
+### Set up local env
+
+Rename `.env.EXAMPLE` to `env.local`
+
+### Install and run
 
 ```bash
+
 cd client && npm install
+cd server && npm install
 
-// see some of the UI work and different props in action:
-
-npm run storybook
+// in a fresh terminal, start server
+cd server && npm run api
 
 // run the application
+cd client && npm run dev
 
-npm run dev
+// storybook:
+cd client && npm run storybook
 
 ```
 
-## Structure
+## Project structure
 
 ```bash
 .
@@ -79,20 +82,20 @@ npm run dev
 - [x] Add support for renaming a role in the "Roles" tab ✔️
 - [x] [Bonus] Add pagination to the user table ✔️
 
-  **Note**: Struggled with this quite a bit --> https://github.com/radix-ui/themes/issues/155
+  **Note**: Struggled with this --> https://github.com/radix-ui/themes/issues/155
 
 ## Next steps
 
-With more time I would have
+With more time I would like to
 
-- better keyboard navigability/focus management
-- implemented the "Add User/Role" feature
-- implemented "Edit User" feature
-- better error handling for server errors
-- better "interstitial" loading states, e.g., change a role and see a transient loader while new role is being populated
+- improve keyboard navigability/focus management between dialog and dropdown
+- implement the "Add User/Role" feature
+- implement "Edit User" feature
+- craft better error handling for server errors
+- craft better "interstitial" loading states, e.g., change a role and see a transient loader while new role is being populated
 - more visual design and better UX for skeleton loader on the table
-- built a proper `Input`
-- introduced dark mode
-- built some better feeling layout animations with Framer
-- gotten a better mental model of how invalidation works with react-query, I haven't worked with that library very much yet
-- written unit and a11y tests with vitest
+- build a proper `Input` component
+- introduce dark mode
+- build some better feeling layout animations with Framer
+- have a better mental model of how invalidation works with react-query, I haven't worked with that library very much yet
+- write unit and a11y tests with vitest
