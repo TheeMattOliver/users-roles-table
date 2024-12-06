@@ -5,4 +5,4 @@ export type AvatarType = React.ComponentPropsWithoutRef<typeof AvatarPrimitive.R
 export type AvatarImageProps = React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 export type AvatarFallbackProps = React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 
-export type AvatarProps = AvatarType & Size
+export type AvatarProps = AvatarType & {size: Size}

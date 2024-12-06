@@ -16,7 +16,7 @@ const meta = {
 
 export default meta
 
-export function playground<T extends object>(args: AvatarProps) {
+export function playground(args: any) {
   return (
     <Avatar {...args}>
       <AvatarImage src={args.src} alt="Avatar Image" />

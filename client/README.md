@@ -10,19 +10,17 @@ Core technologies:
 
 ## Getting started
 
-To run the project, clone it locally:
+Run the project:
 
 ```bash
-
 cd client && npm install
 
-// in a fresh terminal, start server
-cd server && npm run dev
-
 // see some of the UI work and different props in action:
+
 npm run storybook
 
-// run the application in another terminal
+// run the application
+
 npm run dev
 
 ```

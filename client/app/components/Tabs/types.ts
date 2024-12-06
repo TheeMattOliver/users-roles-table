@@ -10,7 +10,6 @@ export type TabsTriggerProps = ComponentPropsWithoutRef<typeof TabsPrimitive.Tri
 
 export type TabsContentProps = ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 
-// Utility Type for Ref
 export type TabsListRef = ElementRef<typeof TabsPrimitive.List>
 export type TabsTriggerRef = ElementRef<typeof TabsPrimitive.Trigger>
 export type TabsContentRef = ElementRef<typeof TabsPrimitive.Content>

@@ -2,12 +2,12 @@
 const nextConfig = {
   logging: {
     fetches: {
-      fullUrl: true,
-    },
+      fullUrl: true
+    }
   },
   images: {
-    remotePatterns: [],
-  },
-};
+    remotePatterns: []
+  }
+}
 
-export default nextConfig;
+export default nextConfig

@@ -1,19 +1,6 @@
-export interface User {
-  id: string
-  createdAt: string
-  updatedAt: string
-  first: string
-  last: string
-  roleId: string
-  photo: string
-  roleName?: string
-}
+import type {User, UserResponse} from '@/app/types/users'
 
-export interface UserResponse {
-  data: User[]
-}
-
-export interface UsersTableProps {
+export interface UsersStaticTableProps {
   initialData?: UserResponse
 }
 export interface UserWithAction extends User {

@@ -77,7 +77,6 @@
 .TabsTrigger:focus-visible {
   outline: none;
 }
-
 .TabsTriggerInner {
   --tab-inner-padding-y: var(--space-1);
   --tab-inner-padding-x: var(--space-2);

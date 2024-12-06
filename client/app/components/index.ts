@@ -25,7 +25,3 @@ export type {
   TableCellProps,
   TableCaptionProps
 } from './Table'
-
-// data rendering components
-export {default as UsersTable} from './UsersTable'
-export {default as RolesTable} from './RolesTable'

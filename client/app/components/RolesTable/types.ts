@@ -1,16 +1,8 @@
-export interface Role {
-  id: string
-  createdAt: string
-  updatedAt: string
-  name: string
-  isDefault: boolean
-  description: string
-}
+import type {Role} from '@/app/types/roles'
 
-export interface RoleResponse {
-  data: Role[]
-}
-
-export interface RolesTableProps {
-  initialData?: RoleResponse
+export interface RolesDataTableProps {
+  initialData: {
+    data: Role[]
+    total?: number
+  }
 }

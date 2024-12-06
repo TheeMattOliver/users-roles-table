@@ -1,2 +1,2 @@
-export {default} from './RolesTable'
-export type {RolesTableProps} from './types'
+export {default} from './RolesDataTable'
+export type {RolesDataTableProps} from './types'

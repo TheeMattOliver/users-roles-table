@@ -33,20 +33,22 @@ const DialogOverlay = React.forwardRef<React.ElementRef<typeof DialogPrimitive.O
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
 const DialogContent = React.forwardRef<React.ElementRef<typeof DialogPrimitive.Content>, DialogContentProps>(
-  ({className, children, showCloseButton, ...props}, ref) => (
-    <DialogPortal>
-      <DialogOverlay />
-      <DialogPrimitive.Content ref={ref} className={clsx(classNames.Content, className)} {...props}>
-        {children}
-        {showCloseButton && (
-          <DialogPrimitive.Close className={clsx(classNames.CloseButton)}>
-            <Cross2Icon />
-            <VisuallyHidden>Close</VisuallyHidden>
-          </DialogPrimitive.Close>
-        )}
-      </DialogPrimitive.Content>
-    </DialogPortal>
-  )
+  ({className, children, showCloseButton, ...props}, ref) => {
+    return (
+      <DialogPortal>
+        <DialogOverlay />
+        <DialogPrimitive.Content ref={ref} className={clsx(classNames.Content, className)} {...props}>
+          {children}
+          {showCloseButton && (
+            <DialogPrimitive.Close className={clsx(classNames.CloseButton)}>
+              <Cross2Icon />
+              <VisuallyHidden>Close</VisuallyHidden>
+            </DialogPrimitive.Close>
+          )}
+        </DialogPrimitive.Content>
+      </DialogPortal>
+    )
+  }
 )
 DialogContent.displayName = DialogPrimitive.Content.displayName
 

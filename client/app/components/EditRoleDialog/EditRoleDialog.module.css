@@ -39,30 +39,3 @@
 .Input:focus-visible {
   outline: 2px solid var(--violet-8);
 }
-.Wrapper {
-  position: relative;
-}
-.PaginationControls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  border-top: 1px solid #e5e7eb;
-  background-color: #fff;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-.PaginationWrapper {
-  margin-top: -1px;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  border-radius: 0 0 var(--radius-2) var(--radius-2);
-  background-color: var(--color-surface);
-}
-.PaginationButtonGroup {
-  display: flex;
-  gap: var(--space-2);
-}

@@ -5,12 +5,12 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['eslint:recommended', 'prettier', 'plugin:storybook/recommended'],
+  extends: ['eslint:recommended', 'prettier', 'plugin:storybook/recommended', 'plugin:prettier/recommended'],
   globals: {
     React: true,
     JSX: true
   },
-  plugins: ['@typescript-eslint', '@next/next'],
+  plugins: ['@typescript-eslint', '@next/next', 'prettier'],
   env: {
     node: true,
     browser: true
@@ -31,7 +31,8 @@ module.exports = {
   ignorePatterns: [
     // Ignore dotfiles
     '.*.js',
-    'node_modules/'
+    'node_modules/',
+    '**/*.stories.tsx'
   ],
   overrides: [{files: ['*.js?(x)', '*.ts?(x)']}]
 }

@@ -4,44 +4,54 @@ import * as React from 'react'
 import {
   useReactTable,
   getCoreRowModel,
-  ColumnDef,
   ColumnFiltersState,
   getFilteredRowModel,
-  getPaginationRowModel,
   flexRender
 } from '@tanstack/react-table'
-import {Table, TableHeader, TableBody, TableRow, TableHead, TableCell, TableFooter} from '../Table'
+import {Table, TableHeader, TableBody, TableRow, TableHead, TableCell} from '../Table'
 import classNames from './DataTable.module.css'
 import type {DataTableProps} from './types'
 import Button from '../Button'
 import {PlusIcon} from '@radix-ui/react-icons'
 
-export default function DataTable<T>({data, columns, onRowAction, filterableColumnKey}: DataTableProps<T>) {
+export default function DataTable<T>({
+  data,
+  columns,
+  filterableColumnKey,
+  onPageChange,
+  pageIndex,
+  pageSize
+}: DataTableProps<T>) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   const [filterText, setFilterText] = React.useState('')
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
-  const [pageIndex, setPageIndex] = React.useState(0)
-  const [pageSize] = React.useState(10)
+
+  // Normalize data shape
+  const rows = Array.isArray(data) ? data : data.data
+  const total = Array.isArray(data) ? data.length : data.total
+  const pages = Array.isArray(data) ? 1 : data.pages
+  const next = Array.isArray(data) ? null : data.next
+  const prev = Array.isArray(data) ? null : data.prev
+
+  const totalPages = Math.ceil(total / pageSize)
+
+  const isPaginated = totalPages > 1
 
   const table = useReactTable({
-    data,
+    data: rows,
     columns,
     state: {
       columnFilters,
       pagination: {
-        pageIndex,
-        pageSize
+        pageIndex: 0,
+        pageSize: 10
       }
     },
-    manualPagination: true,
-    pageCount: Math.ceil((data?.total || 0) / pageSize),
+    manualPagination: !!next || !!prev,
+    pageCount: pages || Math.ceil(total / 10),
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    onPaginationChange: updater => {
-      const newState = typeof updater === 'function' ? updater({pageIndex, pageSize}) : updater
-      setPageIndex(newState.pageIndex)
-    }
+    getFilteredRowModel: getFilteredRowModel()
   })
 
   const handleFilterChange = React.useCallback(
@@ -58,18 +68,16 @@ export default function DataTable<T>({data, columns, onRowAction, filterableColu
     <div className={classNames.Wrapper}>
       {filterableColumnKey && (
         <div className={classNames.InputWrapper}>
-          {/** @TODO, was not able to build a proper input */}
           <input
             type="text"
-            placeholder="Search users..."
-            value={(table.getColumn('first')?.getFilterValue() as string) ?? ''}
+            placeholder={`Search by ${filterableColumnKey}...`}
+            value={(table.getColumn(filterableColumnKey)?.getFilterValue() as string) ?? ''}
             onChange={handleFilterChange}
             className={classNames.Input}
           />
-          {/** @TODO not wired up */}
-          <Button color={'purple'}>
+          <Button color="purple">
             <PlusIcon />
-            Add user
+            Add Item
           </Button>
         </div>
       )}
@@ -91,24 +99,36 @@ export default function DataTable<T>({data, columns, onRowAction, filterableColu
               {row.getVisibleCells().map(cell => (
                 <TableCell key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, {
-                    ...cell.getContext(),
-                    onRowAction
+                    ...cell.getContext()
                   })}
                 </TableCell>
               ))}
             </TableRow>
           ))}
-          <TableRow className={classNames.PaginationControlsWrapper} />
+          {table.getRowModel().rows.length === 0 && (
+            <TableRow>
+              <TableCell colSpan={columns.length}>No data available</TableCell>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
-      <div className={classNames.PaginationControls}>
-        <Button size={'1'} onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-          Previous
-        </Button>
-        <Button size={'1'} onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-          Next
-        </Button>
-      </div>
+      {isPaginated && (
+        <div className={`${classNames.PaginationWrapper}`}>
+          <div className={`${classNames.PaginationControls}`}>
+            <span>
+              Page {pageIndex + 1} of {totalPages || 1}
+            </span>
+            <div className={classNames.PaginationButtonGroup}>
+              <Button size="1" onClick={() => onPageChange(pageIndex - 1)} disabled={pageIndex <= 0}>
+                Previous
+              </Button>
+              <Button size="1" onClick={() => onPageChange(pageIndex + 1)} disabled={pageIndex >= totalPages - 1}>
+                Next
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
