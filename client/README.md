@@ -1,6 +1,6 @@
 # User roles table
 
-<video src="https://github.com/user-attachments/assets/6003abb1-c26c-43d0-a0f1-8d5c452402b3" width="450"></video>
+<video src="https://github.com/user-attachments/assets/8b351757-0450-4a26-800b-dcbd978b0c33" width="450"></video>
 
 ## Getting started
 
