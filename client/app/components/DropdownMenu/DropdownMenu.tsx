@@ -24,8 +24,14 @@ const DropdownMenuContent = React.forwardRef<
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
 
 const DropdownMenuItem = React.forwardRef<React.ElementRef<typeof DropdownMenuPrimitive.Item>, DropdownMenuItemProps>(
-  ({className, ...props}, ref) => (
-    <DropdownMenuPrimitive.Item ref={ref} className={clsx(classNames.DropdownMenuItem, className)} {...props} />
+  ({className, disabled, ...props}, ref) => (
+    <DropdownMenuPrimitive.Item
+      data-disabled={disabled}
+      aria-disabled={disabled}
+      ref={ref}
+      className={clsx(classNames.DropdownMenuItem, className)}
+      {...props}
+    />
   )
 )
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName

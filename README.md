@@ -2,28 +2,25 @@
 
 <video src="https://github.com/user-attachments/assets/6003abb1-c26c-43d0-a0f1-8d5c452402b3" width="450"></video>
 
-Core technologies:
-
-- tanstack/react-query
-- tanstack/react-table
-- CSS modules
-
 ## Getting started
 
 To run the project, clone it locally:
 
+Rename `.env.EXAMPLE` to `env.local`
+
 ```bash
 
 cd client && npm install
+cd server && npm install
 
 // in a fresh terminal, start server
-cd server && npm run dev
+cd server && npm run api
 
-// see some of the UI work and different props in action:
-npm run storybook
+// run the application
+cd client && npm run dev
 
-// run the application in another terminal
-npm run dev
+// storybook:
+cd client && npm run storybook
 
 ```
 
@@ -81,7 +78,7 @@ npm run dev
 - [x] Add support for renaming a role in the "Roles" tab ✔️
 - [x] [Bonus] Add pagination to the user table ✔️
 
-  **Note**: Struggled with this quite a bit --> https://github.com/radix-ui/themes/issues/155
+  **Note**: Struggled with this --> https://github.com/radix-ui/themes/issues/155
 
 ## Next steps
 
@@ -90,11 +87,11 @@ With more time I would like to
 - improve better keyboard navigability/focus management between dialog and dropdown
 - implement the "Add User/Role" feature
 - implement "Edit User" feature
-- better error handling for server errors
-- better "interstitial" loading states, e.g., change a role and see a transient loader while new role is being populated
+- craft better error handling for server errors
+- craft better "interstitial" loading states, e.g., change a role and see a transient loader while new role is being populated
 - more visual design and better UX for skeleton loader on the table
-- built a proper `Input`
-- introduced dark mode
-- built some better feeling layout animations with Framer
-- gotten a better mental model of how invalidation works with react-query, I haven't worked with that library very much yet
-- written unit and a11y tests with vitest
+- build a proper `Input` component
+- introduce dark mode
+- build some better feeling layout animations with Framer
+- have a better mental model of how invalidation works with react-query, I haven't worked with that library very much yet
+- write unit and a11y tests with vitest
